@@ -1,0 +1,62 @@
+@import "tailwindcss";
+
+:root {
+  /* Modern Nature-Inspired Palette */
+  --primary: #1a2e1a;
+  /* Deep Forest Green */
+  --secondary: #d4a373;
+  /* Muted Gold/Sand */
+  --accent: #e76f51;
+  /* Terracotta */
+  --background: #fdfbf7;
+  /* Cream/Off-White */
+  --foreground: #1a2e1a;
+  /* Dark Green Text */
+  --muted: #8c9e8c;
+  /* Sage Green */
+}
+
+@theme inline {
+  --color-primary: var(--primary);
+  --color-secondary: var(--secondary);
+  --color-accent: var(--accent);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-muted: var(--muted);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans), Arial, Helvetica, sans-serif;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+::selection {
+  background-color: var(--secondary);
+  color: var(--primary);
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-scroll {
+  animation: scroll 20s linear infinite;
+}
